@@ -9,3 +9,4 @@ sudo netfilter-persistent save
 echo 'subnet 192.168.7.0 netmask 255.255.255.0 {\n\trange 192.168.7.10 192.168.7.50;\n\toption routers 192.168.7.1;\n\toption domain-name-servers 8.8.8.8, 1.1.1.1;\n}' | sudo tee -a /etc/dhcp/dhcpd.conf
 sudo sed -r --in-place 's/INTERFACESv4=""/INTERFACESv4="eth0"/g;' /etc/default/isc-dhcp-server
 sudo systemctl restart isc-dhcp-server
+sudo reboot
